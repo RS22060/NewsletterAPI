@@ -17,7 +17,6 @@ namespace NewsletterAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Emails
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Email>>> GetEmails()
         {
@@ -28,8 +27,6 @@ namespace NewsletterAPI.Controllers
             return await _context.Emails.ToListAsync();
         }
 
-        // POST: api/Emails
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Email>> PostEmail([FromForm]string emailAddress)
         {
